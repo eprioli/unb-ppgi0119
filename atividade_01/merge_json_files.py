@@ -1,4 +1,5 @@
 import json
+import os
 import jsonlines
 from pathlib import Path
 from tqdm import tqdm
@@ -16,8 +17,14 @@ def merge_json_files(input_dir, output_file):
                     print(f"Erro ao ler o arquivo: {json_file}")
 
 # Caminho do diretório onde os JSONs estão localizados e do arquivo de saída
-input_dir = "/home/abundancia/projetos/unb-ppgi0119/atividade_01/corpus_raw"
-output_file = "/home/abundancia/projetos/unb-ppgi0119/atividade_01/corpus_completo.jsonl"
+input_dir = os.path.expanduser("~/projetos/unb-ppgi0119/atividade_01/corpus_raw")
+output_file = os.path.expanduser("~/projetos/unb-ppgi0119/atividade_01/corpus_completo.jsonl")
 
 # Executa a função de mesclagem
 merge_json_files(input_dir, output_file)
+
+# Executando esse script
+"""
+(UnB) eprioli@GaiaBouddha:~/projetos/unb-ppgi0119/atividade_01$ python merge_json_files.py
+Processando arquivos JSON: 8172it [00:05, 1611.42it/s]
+"""
