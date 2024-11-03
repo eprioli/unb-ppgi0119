@@ -84,6 +84,8 @@ if __name__ == "__main__":
     main()
 
 """
+Executando o script...
+
 (UnB) eprioli@GaiaBouddha:~/projetos/unb-ppgi0119/atividade_01$ python corpus_processor.py
 Treinando o vocabulário:   6%|███▊                                                        | 31/492 [00:00<00:00, 63768.23it/s]
 Texto codificado: [267, 32, 268, 32, 256, 120, 257]
