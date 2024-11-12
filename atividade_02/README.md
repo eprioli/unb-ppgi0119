@@ -1,0 +1,56 @@
+### unb-ppgi0119
+### Disciplina de Tópicos em Fundamentos e Métodos da Computação
+
+### Atividade 02
+
+https://github.com/thiagodepaulo/nlp/blob/main/aula_2/exercicio2.md
+
+Atividade: Criação de Modelo de Bigrama para Geração de Texto
+Objetivo
+Nesta atividade, você irá construir um modelo de bigrama para geração de texto. A atividade será realizada utilizando o tokenizador que você implementou na atividade anterior (algoritmo BPE). O objetivo é treinar e avaliar o modelo, bem como medir sua perplexidade em um conjunto de dados de teste.
+
+Instruções
+Preparação dos Dados:
+
+Utilize o tokenizador implementado na atividade anterior para segmentar o conjunto de dados fornecido.
+Divida os arquivos em treino (80%) e teste (20%) de forma aleatória.
+Implementação do Modelo de Bigrama:
+
+Implemente um modelo de bigrama em Python. O modelo deve calcular a probabilidade condicional de uma palavra dado a palavra anterior com base nos dados de treino.
+A saída deve ser o modelo que calcula a distribuição de probabilidade das palavras baseando-se nas palavras anteriores.
+Cálculo da Perplexidade:
+
+Aplique o modelo de bigrama no conjunto de dados de teste para calcular a perplexidade, uma métrica usada para avaliar a capacidade preditiva do modelo. A perplexidade indica o quão bem o modelo prevê o próximo termo em uma sequência.
+Geração de Texto:
+
+Implemente uma função que gera texto a partir do modelo de bigrama.
+No notebook, gere um exemplo de texto com pelo menos 20 tokens para demonstrar o funcionamento do modelo.
+Entrega:
+
+Crie um arquivo .py com a implementação do modelo bigrama e a função de cálculo de perplexidade. Certifique-se de que o código está funcional e bem documentado.
+No notebook, carregue o modelo e o conjunto de dados de teste, e aplique as seguintes funções:
+Exemplo de geração de texto a partir do modelo de bigrama.
+Apresentação do cálculo da perplexidade para o conjunto de teste.
+Estrutura Esperada
+Arquivo Python (.py):
+
+Código do modelo de bigrama.
+Função de cálculo de perplexidade.
+Função de geração de texto.
+Notebook (.ipynb):
+
+Apresentação do exemplo de geração de texto.
+Cálculo e exibição da perplexidade do modelo no conjunto de teste.
+Dicas
+Utilize a fórmula da perplexidade indicada no livro texto da disciplina -- Link do Livro.
+
+No vídeo do Andrej Karpathy (link do vídeo) ele descreve e implementa um modelo bigrama. Aproveitem a ótima aula dele usem algumas facilidades como a função multinomial para amostragem. A partir de 1h desse vídeo ele implementa usando Redes Neurais, ignorem essa parte! (trabalho futuro?)
+
+Para a geração de texto, experimente iniciar com uma palavra ou token aleatório do vocabulário e gere a sequência a partir do modelo até atingir o número desejado de tokens.
+
+Avaliação
+Implementação correta do modelo de bigrama e da função de perplexidade.
+Organização e clareza do código.
+Documentação e comentários explicativos.
+Correta aplicação do tokenizador desenvolvido anteriormente.
+Prazo: Submeta a atividade até 12/11/2024 na plataforma da disciplina (plataforma a definir).
