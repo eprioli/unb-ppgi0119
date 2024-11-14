@@ -48,6 +48,13 @@ Nesta atividade, você irá construir um modelo de bigrama para geração de tex
 
 - No [vídeo do Andrej Karpathy](https://www.youtube.com/watch?v=PaCmpygFfXo) ele descreve e implementa um modelo bigrama. Aproveitem a ótima aula dele usem algumas facilidades como a função multinomial para amostragem. A partir de 1h desse vídeo ele implementa usando Redes Neurais, ignorem essa parte! (trabalho futuro?)
 - Para a geração de texto, experimente iniciar com uma palavra ou token aleatório do vocabulário e gere a sequência a partir do modelo até atingir o número desejado de tokens.
+- Utilize o tokenizador implementado na atividade anterior para segmentar o conjunto de dados fornecido.
+- Utilizem um tokenizador de sentenças como o  [sent_tokenize](https://www.nltk.org/api/nltk.tokenize.sent_tokenize.html) do nltk 
+- Pode utilizar outro tokenizador, como o tiktoken ou nltk
+- Para cada documento segmente em sentenças utilizando o sent_tokenizer, ou algum outro segmentador em sentenças (o SpaCy faz isso também, mas acho caro computacionalmente. Eu não tive boas experiências com o SpaCy, apesar dele ser popular)
+- Criem tokens especiais para início e fim de sentenças. Se forem utilizar o tiktoken, por exemplo, ver quais os tokens especiais para inicio e fim de sentenças (no tiktoken é <|startoftext|> e <|endoftext|> ).
+- Divida os arquivos em treino (80%) e teste (20%) de forma aleatória.
+
 
 ### Avaliação
 - Implementação correta do modelo de bigrama e da função de perplexidade.
@@ -56,3 +63,5 @@ Nesta atividade, você irá construir um modelo de bigrama para geração de tex
 - Correta aplicação do tokenizador desenvolvido anteriormente.
 ### Prazo
  Submeta a atividade até 12/11/2024 na plataforma da disciplina (plataforma a definir).
+
+### Prazo
