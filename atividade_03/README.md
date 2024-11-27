@@ -1,67 +1,87 @@
 ## unb-ppgi0119
 ## Disciplina de Tópicos em Fundamentos e Métodos da Computação
 
-## Atividade 02 (Criação de Modelo de Bigrama para Geração de Texto)
+## Atividade 03 (Criação de Modelo de Logistic Regression)
 
 https://github.com/thiagodepaulo/nlp/blob/main/aula_2/exercicio2.md
 
-### Objetivo
-Nesta atividade, você irá construir um modelo de bigrama para geração de texto. A atividade será realizada utilizando o tokenizador que você implementou na atividade anterior (algoritmo BPE). O objetivo é treinar e avaliar o modelo, bem como medir sua perplexidade em um conjunto de dados de teste.
 
-### Instruções
-1. Preparação dos Dados:
-    - Utilize o tokenizador implementado na atividade anterior para segmentar o conjunto de dados fornecido.
-    - Divida os arquivos em treino (80%) e teste (20%) de forma aleatória.
-2. Implementação do Modelo de Bigrama:
+Já estão disponíveis as duas bases de dados para os experimentos do Exercício 3. Por favor, façam novos notebooks (pode ser um para cada base ou um para todas) com os resultados de classificação.
+Link da planilha:
+https://docs.google.com/spreadsheets/d/1F485czBA5zR60J4efsEz8-4YydywazOPCKVjb1o0jUs/edit?gid=832486682#gid=832486682
 
-    - Implemente um modelo de bigrama em Python. O modelo deve calcular a probabilidade condicional de uma palavra dado a palavra anterior com base nos dados de treino.
-    - A saída deve ser o modelo que calcula a distribuição de probabilidade das palavras baseando-se nas palavras anteriores.
-3. Cálculo da Perplexidade:
+# Orientação de Exercícios de PLN
 
-    - Aplique o modelo de bigrama no conjunto de dados de teste para calcular a perplexidade, uma métrica usada para avaliar a capacidade preditiva do modelo. A perplexidade indica o quão bem o modelo prevê o próximo termo em uma sequência.
+## Objetivo
 
-4. Geração de Texto:
+Os alunos devem implementar e treinar classificadores de texto utilizando alguma das seguintes bases:  
+[Text Collections](https://github.com/ragero/text-collections/tree/master/complete_texts_csvs).
 
-    - Implemente uma função que gera texto a partir do modelo de bigrama.
-    - No notebook, gere um exemplo de texto com pelo menos 20 tokens para demonstrar o funcionamento do modelo.
+#### Duas bases de dados serão escolhidas e descritas na planilha [Aqui](https://docs.google.com/spreadsheets/d/1F485czBA5zR60J4efsEz8-4YydywazOPCKVjb1o0jUs/edit?gid=0#gid=0). As bases escolhidas para cada aluno serão disponibilizadas um dia antes da entrega. Façam seus códigos e experimentos de forma que seja rápido e fácil executar para alguma das bases escolhidas no dia anterior. 
 
-5. Entrega:
+Data da entrega: **26/11/2024**
 
-    - Crie um arquivo .py com a implementação do modelo bigrama e a função de cálculo de perplexidade. Certifique-se de que o código está funcional e bem documentado.
-    - No notebook, carregue o modelo e o conjunto de dados de teste, e aplique as seguintes funções:
-        - Exemplo de geração de texto a partir do modelo de bigrama.
-        - Apresentação do cálculo da perplexidade para o conjunto de teste.
+## Ferramentas e Bibliotecas
 
-### Estrutura Esperada
-1. Arquivo Python (.py):
+- **Linguagem**: Python  
+- **Bibliotecas principais**: 
+  - `sklearn` para criação e treinamento dos modelos
+  - `pandas` para manipulação de dados
 
-    - Código do modelo de bigrama.
-    - Função de cálculo de perplexidade.
-    - Função de geração de texto.
-2. Notebook (.ipynb):
+## Classificadores e Abordagem
 
-    - Apresentação do exemplo de geração de texto.
-    - Cálculo e exibição da perplexidade do modelo no conjunto de teste.
+1. **Modelos a implementar**:
+   - Multinomial Naive Bayes
+   - Logistic Regression
+   - Um outro modelo da sua escolha
 
-### Dicas
-- Utilize a fórmula da perplexidade indicada no livro texto da disciplina [Speech and Language Processing (3rd ed. draft) Dan Jurafsky and James H. Martin](https://web.stanford.edu/~jurafsky/slp3/)
+2. **Otimização de hiperparâmetros**:
+   - Aplicar **Greedy Search** na base de treino para encontrar os melhores parâmetros.
+   - Os alunos devem estudar o significado dos parâmetros relevantes e pesquisar um conjunto adequado para o Greedy Search.
 
-- No [vídeo do Andrej Karpathy](https://www.youtube.com/watch?v=PaCmpygFfXo) ele descreve e implementa um modelo bigrama. Aproveitem a ótima aula dele usem algumas facilidades como a função multinomial para amostragem. A partir de 1h desse vídeo ele implementa usando Redes Neurais, ignorem essa parte! (trabalho futuro?)
-- Para a geração de texto, experimente iniciar com uma palavra ou token aleatório do vocabulário e gere a sequência a partir do modelo até atingir o número desejado de tokens.
-- Utilize o tokenizador implementado na atividade anterior para segmentar o conjunto de dados fornecido.
-- Utilizem um tokenizador de sentenças como o  [sent_tokenize](https://www.nltk.org/api/nltk.tokenize.sent_tokenize.html) do nltk 
-- Pode utilizar outro tokenizador, como o tiktoken ou nltk
-- Para cada documento segmente em sentenças utilizando o sent_tokenizer, ou algum outro segmentador em sentenças (o SpaCy faz isso também, mas acho caro computacionalmente. Eu não tive boas experiências com o SpaCy, apesar dele ser popular)
-- Criem tokens especiais para início e fim de sentenças. Se forem utilizar o tiktoken, por exemplo, ver quais os tokens especiais para inicio e fim de sentenças (no tiktoken é <|startoftext|> e <|endoftext|> ).
-- Divida os arquivos em treino (80%) e teste (20%) de forma aleatória.
+3. **Divisão da base**:
+   - Divida a base em treino (80%) e teste (20%).
+   - Realize a busca dos melhores hiperparâmetros na base de treino.
 
+4. **Validação**:
+   - Após encontrar os melhores parâmetros, re-treine o modelo com todos os dados de treino.
+   - Calcule as métricas **F1 Score** (macro e micro) e **Acurácia** no conjunto de teste.
 
-### Avaliação
-- Implementação correta do modelo de bigrama e da função de perplexidade.
-- Organização e clareza do código.
-- Documentação e comentários explicativos.
-- Correta aplicação do tokenizador desenvolvido anteriormente.
-### Prazo
- Submeta a atividade até 12/11/2024 na plataforma da disciplina (plataforma a definir).
+## Passos Detalhados
 
-### Prazo
+### Parte 1: Implementação do Script para Greedy Search
+1. Crie um arquivo `find_best_hyperparameters.py` que:
+   - Carregue a base de dados especificada.
+   - Divida a base em treino e teste (80/20).
+   - Salve a base de treino e teste para a Avaliação Final. 
+   - Realize Greedy Search nos hiperparâmetros relevantes para cada modelo.
+   - Salve todos os resultados dos parâmetros avaliados em um `DataFrame` do pandas.
+   - Exporte o DataFrame com os resultados para um arquivo `.csv`.
+
+---
+
+### Parte 2: Notebook para Avaliação Final
+1. Crie um **notebook** que:
+   - Carregue a base de dados e os resultados do Greedy Search exportados pelo script.
+   - Apresente o DataFrame com os resultados do Greedy Search.
+   - Treine os modelos com os melhores hiperparâmetros encontrados na base de treino.
+   - Calcule e exiba as métricas **F1 Score** (macro e micro) e **Acurácia** no conjunto de teste.
+   - Interpretem os resultados e justifiquem os melhores hiperparâmetros encontrados!
+
+---
+
+## Entregáveis
+
+1. **Arquivo Python**:
+   - `find_best_hyperparameters.py` para realizar Greedy Search.
+   - Inclua comentários explicativos sobre o código e os parâmetros usados.
+
+2. **Notebook**:
+   - Apresente:
+     - O DataFrame com os resultados da busca de hiperparâmetros.
+     - As métricas finais calculadas no conjunto de teste.
+
+3. **Arquivo CSV**:
+   - Exportação do DataFrame com os resultados do Greedy Search.
+
+---
