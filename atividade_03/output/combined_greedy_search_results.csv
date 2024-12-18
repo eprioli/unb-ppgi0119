@@ -1,0 +1,5 @@
+model,params,f1_macro
+MultinomialNB,{'alpha': 0.1},0.7838314843751758
+MultinomialNB,{'alpha': 0.5},0.6810558673500768
+LogisticRegression,"{'C': 0.1, 'penalty': 'l2'}",0.8215490230699248
+LogisticRegression,"{'C': 1, 'penalty': 'l2'}",0.8170674340663675
