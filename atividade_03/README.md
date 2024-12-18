@@ -3,6 +3,20 @@
 
 ## Atividade 03 (Criação de Modelo de Logistic Regression)
 
+## Ao rodar o script find_best_hyperparameters.py é gerado um performance_log.csv
+
+| Step                          | Elapsed Time (s) | CPU Usage (%) | Memory Usage (%) |
+|-------------------------------|------------------|---------------|------------------|
+| Data Loading                  | 0.28             | 13.7          | 22.4             |
+| Class Filtering               | 0.29             | 0.0           | 22.4             |
+| Data Splitting                | 1.22             | 29.5          | 22.4             |
+| Vectorization                 | 3.97             | 14.7          | 22.8             |
+| Greedy Search - MultinomialNB | 5.83             | 34.5          | 25.0             |
+| Greedy Search - LogisticRegression | 638.28      | 80.1          | 25.1             |
+| Results Saving                | 638.29           | 0.0           | 25.1             |
+| Script Completion             | 638.29           | 0.0           | 25.1             |
+
+
 https://github.com/thiagodepaulo/nlp/blob/main/aula_2/exercicio2.md
 
 
@@ -85,3 +99,5 @@ Data da entrega: **26/11/2024**
    - Exportação do DataFrame com os resultados do Greedy Search.
 
 ---
+
+
